@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    a {
+      display: inline-block;
+      color: #101010;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: red;
+      text-decoration: underline;
+    }
+
+    li {
+      list-style: none;
+    }
+
+    input {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      height: 100px;
+      background: #ccc;
+    }
+
+    .logo {
+      width: 150px;
+      height: 100px;
+    }
+
+    .hamburger {
+      display: none;
+    }
+
+    @media screen and (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+    }
+
+    .hamburger__item {
+      width: 60px;
+      margin: 10px 0px;
+      height: 0px;
+      border: 10px solid green;
+      border-radius: 10px;
+    }
+
+    .right {
+      display: none;
+      flex-basis: 100%;
+      background-color: #aaa;
+    }
+
+    @media screen and (min-width: 769px) {
+      .right {
+        display: flex !important;
+        flex-basis: auto;
+        background-color: #ccc;
+      }
+    }
+
+    input:checked~.right {
+      display: block;
+    }
+
+    .nav {
+      margin-right: 20px;
+      display: flex;
+      flex-direction: row;
+    }
+
+    @media screen and (max-width: 768px) {
+      .nav {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+
+    .navitem {
+      margin-left: 20px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <a class="logo" href="https://cn.vuejs.org/v2/guide/" target="blank">
+      <img src="https://cn.vuejs.org/images/logo.svg" alt="vue" />
+    </a>
+    <input type="checkbox" name="hamburger" id="hamburger" />
+    <label for="hamburger">
+      <ul class="hamburger">
+        <li class="hamburger__item"></li>
+        <li class="hamburger__item"></li>
+        <li class="hamburger__item"></li>
+      </ul>
+    </label>
+    <div class="right">
+      <ul class="nav">
+        <li class="navitem"><a href="#">home</a></li>
+        <li class="navitem"><a href="#">about</a></li>
+        <li class="navitem"><a href="#">work</a></li>
+        <li class="navitem"><a href="#">services</a></li>
+        <li class="navitem"><a href="#">contact</a></li>
+        <li class="navitem"><a href="#">Privacy</a></li>
+      </ul>
+    </div>
+  </header>
+</body>
+
+</html>
